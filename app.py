@@ -112,15 +112,15 @@ if menu == "Prediction":
         pred = model.predict(input_df)[0]
 
         st.markdown(
-            f"""
-            <div style="padding:20px; border-radius:15px; background-color:#f9f9f9; border:1px solid #ddd; text-align:center; margin-top:20px;">
-                <h2>⏱ Estimated Delivery Time</h2>
-                <h1 style="color:#2E86C1;">{pred:.2f} hours</h1>
-                <p><b>Distance:</b> {distance_km:.2f} km</p>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+    f"""
+    <div style="padding:20px; border-radius:15px; background-color:#f9f9f9; border:1px solid #ddd; text-align:center; margin-top:20px;">
+        <h2 style="color:#27AE60;">⏱ Estimated Delivery Time</h2>
+        <h1 style="color:#2E86C1;">{pred:.2f} hours</h1>
+        <p><b>Distance:</b> {distance_km:.2f} km</p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 # -----------------------
 # Insights Page
@@ -159,3 +159,4 @@ elif menu == "Data Insights":
             sns.heatmap(data[numeric_cols].corr(), annot=True, cmap="coolwarm", ax=ax)
             ax.set_title("Correlation Matrix")
             st.pyplot(fig)
+
